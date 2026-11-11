@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Digital Health Records</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🩺 Digital Health Records</h1>
+  <div><button class="ghost" onclick="exportData()">Export JSON</button></div>
+</header>
+<main>
+  <section class="card">
+    <input id="q" placeholder="Search patients…" oninput="renderList()">
+    <div id="list"></div>
+    <h3>Add patient</h3>
+    <label>Full name</label><input id="n">
+    <div class="row">
+      <div><label>Age</label><input id="a" type="number" min="0"></div>
+      <div><label>Gender</label><select id="g"><option>Female</option><option>Male</option><option>Other</option></select></div>
+    </div>
+    <div class="row">
+      <div><label>Phone</label><input id="ph"></div>
+      <div><label>Blood group</label><select id="b"><option>A+</option><option>A−</option><option>B+</option><option>B−</option><option>AB+</option><option>AB−</option><option>O+</option><option>O−</option></select></div>
+    </div>
+    <label>Allergies (comma separated)</label><input id="al">
+    <button onclick="addPatient()">Save patient</button>
+  </section>
+
+  <section class="card" id="detail"></section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
